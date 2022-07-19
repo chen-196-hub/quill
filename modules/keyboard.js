@@ -83,7 +83,7 @@ class Keyboard extends Module {
     this.listen();
   }
 
-  addBinding(keyBinding, context = {}, handler = {}) {
+  addBinding(keyBinding, context = {skipPreventing: boolean | undefined}, handler = {}) {
     const binding = normalize(keyBinding);
     if (binding == null) {
       debug.warn('Attempted to add invalid keyboard binding', binding);
